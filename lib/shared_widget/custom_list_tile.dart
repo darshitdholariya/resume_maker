@@ -21,15 +21,6 @@ class CustomListTile extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return ListTile(
-      onTap: () {
-        Navigator.of(context).push(
-          MaterialPageRoute(
-            builder: (context) => ViewResumeScreen(
-              docId: docId,
-            ),
-          ),
-        );
-      },
       title: Text(
         '${data['name']}',
         style: const TextStyle(
@@ -62,6 +53,51 @@ class CustomListTile extends StatelessWidget {
       trailing: Row(
         mainAxisSize: MainAxisSize.min,
         children: [
+          SizedBox(
+            height: 30,
+            width: 30,
+            child: Center(
+              child: InkWell(
+                onTap: () {
+                  Navigator.of(context).push(
+                    MaterialPageRoute(
+                      builder: (context) => ViewResumeScreen(
+                        docId: docId,
+                      ),
+                    ),
+                  );
+                },
+                child: const Icon(
+                  Icons.info,
+                  color: kColorDarkNavy,
+                  size: 24,
+                ),
+              ),
+            ),
+          ),
+          SizedBox(
+            height: 30,
+            width: 30,
+            child: Center(
+              child: InkWell(
+                onTap: () {
+                  Navigator.of(context).push(
+                    MaterialPageRoute(
+                      builder: (context) => AddResumeScreen(
+                        docId: docId,
+                        task: TaskType.edit,
+                      ),
+                    ),
+                  );
+                },
+                child: const Icon(
+                  Icons.edit,
+                  color: kColorDarkNavy,
+                  size: 24,
+                ),
+              ),
+            ),
+          ),
           SizedBox(
             height: 30,
             width: 30,
@@ -103,29 +139,6 @@ class CustomListTile extends StatelessWidget {
                 child: const Icon(
                   Icons.delete,
                   color: Colors.red,
-                  size: 24,
-                ),
-              ),
-            ),
-          ),
-          SizedBox(
-            height: 30,
-            width: 30,
-            child: Center(
-              child: InkWell(
-                onTap: () {
-                  Navigator.of(context).push(
-                    MaterialPageRoute(
-                      builder: (context) => AddResumeScreen(
-                        docId: docId,
-                        task: TaskType.edit,
-                      ),
-                    ),
-                  );
-                },
-                child: const Icon(
-                  Icons.edit,
-                  color: kColorDarkNavy,
                   size: 24,
                 ),
               ),

@@ -23,7 +23,10 @@ class _SplashScreenState extends State<SplashScreen> {
     return const SafeArea(
         child: Scaffold(
       body: Center(
-        child: Text("Splash Screen"),
+        child: Text(
+          "Resume      \n       Maker",
+          style: TextStyle(fontSize: 50),
+        ),
       ),
     ));
   }
